@@ -1,0 +1,124 @@
+@import "/public/assets/styles/variables.scss";
+
+.Shared {
+  .files_wrapper {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.8rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(#01aaed, 0.05),
+      0rem 0rem 0.2rem rgba(#01aaed, 0.3);
+    font-size: 1.4rem;
+
+    .icon {
+      width: 15rem;
+      padding: 2rem;
+
+      svg {
+        font-size: 1.8rem;
+      }
+    }
+
+    .name,
+    .size,
+    .hash,
+    .uploaded_at {
+      width: 50%;
+      padding: 2rem;
+    }
+
+    .share,
+    .download {
+      width: 20rem;
+      padding: 2rem;
+
+      svg {
+        cursor: pointer;
+        margin-left: 1rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    .download {
+      width: 28rem;
+      padding: 2rem;
+      color: $neutral-400;
+
+      svg {
+        color: $neutral-400;
+        font-size: 2.4rem;
+      }
+
+      &.verified {
+        color: $primary-green;
+      }
+
+      &.sm {
+        svg {
+          font-size: 1.9rem;
+        }
+      }
+    }
+
+    .table_of_content {
+      display: flex;
+      border-bottom: 1px solid rgb(238, 238, 238);
+
+      .name,
+      .size,
+      .hash,
+      .share,
+      .icon,
+      .uploaded_at,
+      .download {
+        font-weight: 600;
+        color: gray;
+      }
+    }
+
+    .files_container {
+      .file {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        .size,
+        .hash,
+        .share,
+        .icon,
+        .uploaded_at {
+          color: $neutral-400;
+        }
+
+        .icon_wrapper {
+          padding: 0.9rem 0.6rem;
+          width: max-content;
+          border-radius: 0.6rem;
+          font-size: 1.1rem;
+          color: white;
+          font-weight: 600;
+
+          &.pdf {
+            background: #f54a4a;
+          }
+
+          &.png {
+            background: #77baf4;
+          }
+
+          &.jpg {
+            background: #f5a54a;
+          }
+
+          &.none {
+            background: #2b8d0e;
+
+            svg {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

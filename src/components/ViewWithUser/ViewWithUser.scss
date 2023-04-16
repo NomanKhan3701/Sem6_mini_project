@@ -1,0 +1,248 @@
+@import "/public/assets/styles/variables.scss";
+
+.View {
+  h1 {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .User_popup_wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: calc($z-navbar + 1);
+    background: rgba(231, 237, 240, 0.8);
+    backdrop-filter: blur(4px);
+    display: none;
+
+    &.active {
+      display: grid;
+    }
+
+    .user_popup {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      width: 80rem;
+      height: 50rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.8rem;
+
+      &::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #888;
+      }
+
+      .send {
+        width: 25rem;
+        padding: 2rem;
+      }
+
+      .avatar {
+        width: 15rem;
+        padding: 1rem;
+        padding-left: 2rem;
+      }
+
+      .name,
+      .hash {
+        width: 50%;
+        padding: 2rem;
+      }
+
+      .table_of_content {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $neutral-200;
+
+        .name,
+        .avatar,
+        .hash,
+        .send {
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: gray;
+        }
+      }
+
+      .users_container {
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+
+        .hash {
+          color: $neutral-400;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          font-size: 1.2rem;
+
+          img {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+          }
+
+          .btn_primary {
+            padding: 0.6rem 2rem;
+            font-size: 1.2rem;
+            width: max-content;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            background: linear-gradient(
+              to right,
+              #00b7ff 0%,
+              $primary-blue 80%
+            );
+            border-radius: 5rem;
+            border: none;
+            outline: none;
+            color: #ffff;
+            transition: all 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+              background: linear-gradient(to right, #01aaed 0%, #1d819f 80%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .files_wrapper {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.8rem;
+    box-shadow: 0.5rem 0.5rem 1rem rgba(#01aaed, 0.05),
+      0rem 0rem 0.2rem rgba(#01aaed, 0.3);
+    font-size: 1.4rem;
+
+    .icon {
+      width: 15rem;
+      padding: 2rem;
+
+      svg {
+        font-size: 1.8rem;
+      }
+    }
+
+    .name,
+    .size,
+    .hash,
+    .uploaded_at {
+      width: 50%;
+      padding: 2rem;
+    }
+
+    .share,
+    .download {
+      width: 20rem;
+      padding: 2rem;
+
+      svg {
+        cursor: pointer;
+        margin-left: 1rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    .download {
+      width: 28rem;
+      padding: 2rem;
+      color: $neutral-400;
+
+      svg {
+        color: $neutral-400;
+        font-size: 2.4rem;
+      }
+
+      &.verified {
+        color: $primary-green;
+      }
+
+      &.sm {
+        svg {
+          font-size: 1.9rem;
+        }
+      }
+    }
+
+    .table_of_content {
+      display: flex;
+      border-bottom: 1px solid rgb(238, 238, 238);
+
+      .name,
+      .size,
+      .hash,
+      .share,
+      .icon,
+      .uploaded_at,
+      .download {
+        font-weight: 600;
+        color: gray;
+      }
+    }
+
+    .files_container {
+      .file {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+
+        .size,
+        .hash,
+        .share,
+        .icon,
+        .uploaded_at {
+          color: $neutral-400;
+        }
+
+        .icon_wrapper {
+          padding: 0.9rem 0.6rem;
+          width: max-content;
+          border-radius: 0.6rem;
+          font-size: 1.1rem;
+          color: white;
+          font-weight: 600;
+
+          &.pdf {
+            background: #f54a4a;
+          }
+
+          &.png {
+            background: #77baf4;
+          }
+
+          &.jpg {
+            background: #f5a54a;
+          }
+
+          &.none {
+            background: #2b8d0e;
+
+            svg {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

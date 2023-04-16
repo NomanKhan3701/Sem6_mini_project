@@ -1,0 +1,188 @@
+@import "/public/assets/styles/variables.scss";
+
+.Hero_section {
+  width: 100%;
+  height: 100vh;
+  min-height: 60rem;
+  background: linear-gradient(rgb(237, 250, 254) 5%, #ffff);
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+
+  .hero_left {
+    width: 45%;
+
+    .helper_title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #95def5;
+      margin-bottom: 1rem;
+    }
+
+    .cachy_title {
+      font-size: 6.5rem;
+      color: $primary-dark-blue;
+      max-width: 40rem;
+      font-weight: 600;
+      margin-bottom: 4rem;
+
+      img {
+        height: 5rem;
+      }
+
+      .flex {
+        display: flex;
+        gap: 1.8rem;
+        align-items: center;
+      }
+
+      .smile {
+        color: $primary-blue;
+        position: relative;
+        background: linear-gradient(to right, #93dbf7 0%, $primary-blue 40%);
+        background-clip: text;
+        width: max-content;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200%;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 0.4rem;
+          background: linear-gradient(to right, #93dbf7 0%, $primary-blue 100%);
+          bottom: 0.3rem;
+          left: 0;
+        }
+      }
+    }
+
+    .description {
+      color: $neutral-300;
+      font-weight: 600;
+      font-size: 1.6rem;
+      max-width: 40rem;
+      line-height: 2rem;
+    }
+
+    .utils {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 4rem;
+
+      .btn_primary {
+        padding: 1.5rem 3rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        background: linear-gradient(to right, #00b7ff 0%, $primary-blue 80%);
+        box-shadow: 0.5rem 0.5rem 1.5rem rgba(#01aaed, 0.4);
+        border-radius: 5rem;
+        color: #ffff;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background: linear-gradient(to right, #01aaed 0%, #1d819f 80%);
+        }
+      }
+    }
+  }
+
+  .hero_right {
+    width: 55%;
+    height: 100%;
+
+    .main_content_wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        transform: translate(-50%, -50%);
+        height: 60%;
+        width: 45rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: calc(100% - 5rem);
+          width: 100%;
+          outline: 10px solid #ffff;
+          border-radius: 50% 50% 0 0;
+          z-index: -1;
+          box-shadow: 0.5rem 0.5rem 4rem rgba(#1d819f, 0.4);
+        }
+
+        .hero_img {
+          margin: auto;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .hero_imgbg {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: calc(100% - 5rem);
+          width: 100%;
+          border-radius: 1rem;
+          z-index: -1;
+          filter: blur(4px);
+          border-radius: 50% 50% 0 0;
+        }
+
+        .card_wrapper {
+          position: absolute;
+          top: 15%;
+          left: -10%;
+          height: calc(100% - 5rem);
+
+          .card {
+            width: max-content;
+            max-width: 12rem;
+            border-radius: 1rem;
+            background: linear-gradient(
+              to right,
+              #00b7ff 0%,
+              $primary-blue 80%
+            );
+            box-shadow: 0.5rem 0.5rem 1.5rem rgba(#01aaed, 0.4);
+            color: white;
+            font-weight: 600;
+            font-size: 1.4rem;
+            padding: 1rem;
+            padding-left: 2rem;
+            position: relative;
+
+            img {
+              height: 3rem;
+              position: absolute;
+              top: 0;
+              left: 0;
+              transform: translate(-50%, -50%);
+            }
+          }
+
+          &.c1 {
+            top: 80%;
+            left: calc(100% - 2rem);
+
+            .card {
+              max-width: 15rem;
+              transform: rotate(10deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

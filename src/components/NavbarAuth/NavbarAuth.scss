@@ -1,0 +1,51 @@
+@import "/public/assets/styles/variables.scss";
+
+.Navbar_auth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navbar-height;
+  display: flex;
+  align-items: center;
+  color: $primary-dark-blue;
+  font-size: 1.6rem;
+  z-index: $z-navbar;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    span {
+      color: $primary-blue;
+    }
+  }
+
+  .links_wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    align-items: center;
+    margin-left: auto;
+
+    .link {
+      font-size: 1.4rem;
+      font-weight: 600;
+      transform-origin: center;
+      color: $neutral-400;
+      padding: 0 0.6rem;
+      padding-bottom: 0.5rem;
+      letter-spacing: 0.1rem;
+      transition: color 0.3s ease-in-out;
+
+      &.active {
+        color: $primary-blue;
+        border-bottom: 0.25rem solid $primary-blue;
+      }
+
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+}
