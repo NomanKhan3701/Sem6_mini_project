@@ -165,10 +165,10 @@ const Sidebar = () => {
                     </div>
                 </> : <>
                     <div className='border-b border-b-neutral-500 p-[1.6rem] px-[2rem] w-[23rem]'>
-                        PeerDocs
+                        <div className='capitalize'>{user.type}</div>
+                        {/* PeerDocs */}
                     </div>
                     <div className="flex flex-col max-h-full text-14 pt-16 overflow-auto hide-scrollbar p-[2rem] pr-10">
-
                         {Object.entries(currentRoute).map(([key, value]) => {
                             return (
                                 <div key={key}>
@@ -195,6 +195,7 @@ const Sidebar = () => {
                         })}
                     </div>
                     <div className='flex align-middle gap-8 py-16 px-20 text-16 cursor-pointer hover:text-blue mt-auto'>
+
                         <BiLogOut className='text-22' />
                         Logout
                     </div>
