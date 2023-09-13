@@ -1,8 +1,9 @@
 import React from "react";
 import "./AcceptRequestedDocs.scss";
 import { useSelector } from "react-redux";
+import { HiDocumentDownload } from "react-icons/hi";
 
-const AcceptRequestedDocs = ({ userData = [] }) => {
+const AcceptRequestedDocs1 = ({ userData = [] }) => {
   const user = useSelector((state) => state.auth.user);
 
   return (
@@ -13,9 +14,10 @@ const AcceptRequestedDocs = ({ userData = [] }) => {
           <div className="name">User requested</div>
           <div className="hash">Case</div>
           <div className="hash">Email</div>
-          <div className="hash">Hash</div>
-
-          <div className="send">Verify</div>
+          <div className="hash">From</div>
+          <div className="hash">To</div>
+          <div className="send">Download</div>
+          <div className="send">Upload</div>
         </div>
         <div className="users_container">
           {userData.map((user, index) => (
@@ -26,10 +28,13 @@ const AcceptRequestedDocs = ({ userData = [] }) => {
               <div className="name">{user.name}</div>
               <div className="hash">{user.companyRequested}</div>
               <div className="hash">{user.email}</div>
-              <div className="hash">{user.hash}</div>
-
+              <div className="hash">{user.from}</div>
+              <div className="hash">{user.to}</div>
+              <div className="download">
+                <HiDocumentDownload />
+              </div>
               <div className="send">
-                <div className="btn_primary">Verify</div>
+                <div className="btn_primary">Upload</div>
               </div>
             </div>
           ))}
@@ -39,4 +44,4 @@ const AcceptRequestedDocs = ({ userData = [] }) => {
   );
 };
 
-export default AcceptRequestedDocs;
+export default AcceptRequestedDocs1;

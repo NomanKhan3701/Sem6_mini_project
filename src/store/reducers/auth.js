@@ -13,7 +13,7 @@ const initialState = {
 	token: "null",
 	// token: null,
 	user: {
-		type: "company",
+		type: "administrator",
 	},
 	currentRoute: "{}",
 	loginInProgress: false,
